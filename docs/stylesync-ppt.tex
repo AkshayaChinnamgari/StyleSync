@@ -1,0 +1,257 @@
+\documentclass[11pt,aspectratio=169,notes,mathserif]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usefonttheme{serif}
+\setbeamertemplate{frametitle continuation}[from second][\textbf{(contd..)}]
+\usepackage[english]{babel}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{ragged2e}
+\setbeamertemplate{caption}[numbered]
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{lmodern}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue]{hyperref}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{booktabs}
+\addtobeamertemplate{frametitle}{}{% 
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill (14.5,0.6) circle (.8cm);
+		\clip (14.5,0.5) circle (.75cm);
+		\node at (14.5,0.6) {\includegraphics[width=0.95cm]{bvrit}};
+\end{tikzpicture}}
+\renewcommand{\raggedright}{\justifying}
+\apptocmd{\frame}{}{\justifying}{}
+
+\title[\textbf{Department of CSE}]{{\textbf{StyleSync: Your AI Wardrobe Companion}}}
+
+\author[Batch No: 3]{%
+	\texorpdfstring{%
+		\begin{columns}
+			\column{.3333\linewidth}
+			\centering
+			Chinnamgari Akshaya \\ 22WH1A0510
+			\column{.3333\linewidth}
+			\centering
+			Gootypalle Sowmya \\ 22WH1A0552
+			\column{.3333\linewidth}
+			\centering
+			Manchala Akshaya \\ 23WH5A0506
+		\end{columns}
+	}
+	{Author 1, Author 2, Author 3}
+}
+
+\institute[]{
+	\textbf{\underline{Under the Guidance of}}\\
+	\textbf{Ms. B. Pushpa}\\
+	\textbf{Assistant Professor,} \\
+	\textbf{Dept of C.S.E,}\\ 
+	\textbf{BVRIT Hyderabad College of Engineering for Women.}}
+
+\date{7 February, 2026}
+\begin{document}
+
+% Title Slide
+\begin{frame}[plain]
+	\maketitle
+\end{frame}
+
+% Table of Contents
+\begin{frame}{\textbf{Table of Content }}
+	\tableofcontents
+\end{frame}
+
+\section{Problem Statement}
+\begin{frame}[allowframebreaks]{\textbf{Problem Statement}}
+Managing personal style has become difficult as fast-changing trends and growing wardrobes make daily outfit choices confusing and time-consuming. Existing fashion platforms offer inspiration but ignore a user's actual clothes, leading to unused items, poor coordination, unnecessary shopping, and reduced sustainability. Many people struggle to visualize matching outfits for specific weather, or preferences, causing decision fatigue. This highlights the need for a personalized AI system that digitally manages wardrobes and provides smart, context-aware outfit recommendations that improve wardrobe usage, reduce waste, and support sustainable fashion habits.
+
+\end{frame}
+
+
+\section{Abstract}
+\begin{frame}[allowframebreaks]{\textbf{Abstract}}
+Fashion recommendation systems are rapidly advancing through computer vision, AI, and personalization, enabling applications like digital closets and smart styling. StyleSync is an AI-powered wardrobe companion that simplifies outfit selection, manages clothing collections, and offers personalized styling suggestions by analysing wardrobe images for attributes like type, colour. Using hybrid recommendation techniques, it generates outfit ideas, improves wardrobe utilization. StyleSync reduces decision fatigue, boosts confidence, and showcases how AI can transform personalized fashion experiences.
+\end{frame}
+
+\section{Literature Review}
+\begin{frame}[allowframebreaks]{\textbf{Literature Review}}
+\tiny
+\begin{table}
+	\centering
+	\begin{tabular}{|>{\centering\arraybackslash}p{0.5cm}|p{3cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|}
+		\hline
+		\textbf{No.} & \textbf{Paper} & \textbf{Summary} & \textbf{Contributions} & \textbf{Research Gaps} \\
+		\hline
+		1 & \textbf{OutfitX: A Deep Learning Framework for Personalized Outfit Recommendations} & Presents an end-to-end deep learning system for outfit recommendations, leveraging image features and user preferences to suggest personalized clothing combinations. & Integrates computer vision with hybrid recommendation models for multi-item outfit generation; demonstrates user-centric personalization. & Further work needed on real-time performance, scalability, and inclusion of additional context (e.g., occasion/weather). \\
+		\hline
+		2 & \textbf{A Hybrid Multimodal Deep Learning Framework for Intelligent Fashion Recommendation} & Proposes a multimodal framework combining image and text encoders for compatibility-based fashion recommendation using CLIP and transformers. & Achieves high accuracy by fusing visual and semantic information; advances context-aware, scalable fashion AI. & Lacks detailed user attribute modeling and focus on everyday wardrobe scenarios. \\
+		\hline
+		3 & \textbf{A Review on the Literature of Fashion Recommender System using Deep Learning} & Surveys progress in deep learning-powered fashion recommender systems, detailing neural network, hybrid, and collaborative approaches. & Provides taxonomy and comparison; highlights key challenges and future directions in fashion recommendation. & Few real-world deployments; limited coverage of sustainability and practical user feedback integration. \\
+		\hline
+		4 & \textbf{A Review on Clothes Matching and Recommendation Systems based on user Attributes} & Explores matching algorithms based on user-centered attributes such as style, body type, and event context. & Emphasizes role of personalization; reviews user attribute integration for higher acceptance and satisfaction. & Attribute extraction from images remains a challenge; need for dynamic, adaptive personalization. \\
+		\hline
+	\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{\textbf{Literature Review}}
+\tiny
+\begin{table}
+	\centering
+	\begin{tabular}{|>{\centering\arraybackslash}p{0.5cm}|p{3cm}|p{3.5cm}|p{2.5cm}|p{2.5cm}|}
+		\hline
+		\textbf{No.} & \textbf{Paper} & \textbf{Summary} & \textbf{Contributions} & \textbf{Research Gaps} \\
+		\hline
+		5 & \textbf{AI-Based Virtual Clothing Try-On System} & Details virtual try-on AI solutions allowing users to visualize selected outfits digitally, combining AR and deep learning. & Improves user engagement and experience; bridges gap between digital recommendation and physical clothing visualization. & Accuracy depends on clear garment segmentation and pose estimation; real-world usability for diverse clothing types needs testing. \\
+		\hline
+		6 & \textbf{Fashion Fusion: Exploring Apparel Recommendation Systems across companies using ML} & Evaluates cross-company fashion recommendation using KNN, Random Forest, and filtering techniques; compares performance on diverse catalogs. & Shows that hybrid algorithms can improve matching/recommendation accuracy; highlights business use-cases. & Dataset bias between companies; does not cover deep neural network solutions. \\
+		\hline
+		7 & \textbf{Smart Fashion Recommendation System using Random Forest Algorithm} & Uses Random Forest and SMOTE for fashion suggestion; compares classic ML approaches (SVM, KNN) with ensembles for prediction accuracy. & Validates ensemble ML for real-world recommendation; provides workflow for balanced data handling. & Outdated on deep learning advances; lacks integration of visual analysis and complex fashion attributes. \\
+		\hline
+		8 & \textbf{Virtual Wardrobe using Augmented Reality} & Reviews AR-based wardrobe systems, enabling users to manage and try outfits in a virtual environment powered by AI. & Demonstrates practical utility of AR for digital fashion; enables virtual mix-and-match, try-on features. & Yet to be widely adopted; technical barriers for generic clothing and broad device support exist. \\
+		\hline
+	\end{tabular}
+\end{table}
+\end{frame}
+
+% Research Gaps
+\section{Research Gaps}
+\begin{frame}{\textbf{Research Gaps}}
+\begin{itemize}
+	\item Limited incorporation of real-time weather conditions in outfit recommendation systems
+	\item Difficulty in accurately extracting garment attributes from clothing images
+	\item Insufficient validation across diverse clothing types and styles
+	\item Lack of testing and evaluation in real-world usage scenarios
+    \item Minimal focus on sustainability and efficient utilization of existing wardrobes
+\end{itemize}
+\end{frame}
+
+
+% Objectives
+\section{Objectives}
+\begin{frame}{\textbf{Objectives}}
+\begin{itemize}
+	\item Build an intelligent full-stack wardrobe system that lets users upload clothing images and access a digital, user-friendly wardrobe.
+	\item Develop AI-driven models to extract attributes like type, color from user-uploaded clothing images.
+	\item Implement a hybrid recommendation engine that provides personalized outfit suggestions based on seasons, weather, and user preferences.
+	\item Promote sustainability and personalization by maximizing wardrobe usage and recommending purchases from shopping platforms only when necessary.
+\end{itemize}
+\end{frame}
+
+
+%System Architecture
+\section{System Architecture}
+
+\begin{frame}{System Architecture}
+\centering
+\vspace{0.4cm}
+\includegraphics[width=\linewidth]{Project Review PPT Template/Screenshot (184).png}
+\end{frame}
+
+\section{Methodology}
+
+\begin{frame}{Methodology}
+\footnotesize
+\begin{block}{Image Processing \& AI Techniques}
+\begin{itemize}
+    \item Background removal with \texttt{rembg} (U\textsuperscript{2}-Net)
+    \item Dominant color extraction using PIL
+    \item Garment classification via MobileNetV2 (TensorFlow)
+    \item Season and style heuristics from extracted attributes
+\end{itemize}
+\end{block}
+
+\vspace{0.25cm}
+
+\begin{block}{Recommendation Logic}
+\begin{itemize}
+    \item Occasion-based filtering and matching rules
+    \item Color harmony matching across wardrobe items
+    \item Weather-aware suggestions using OpenWeatherMap API
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Methodology}
+\footnotesize
+\begin{block}{Implementation Stack}
+\begin{itemize}
+    \item Backend: FastAPI + JWT auth + SQLAlchemy ORM
+    \item Database: SQLite (local persistence)
+    \item Frontend: React SPA + Axios API layer
+    \item Storage: local uploads + profile images
+    \item Libraries: TensorFlow, NumPy, Pillow, rembg, Requests
+\end{itemize}
+\end{block}
+\end{frame}
+
+%outputs
+\section{Outputs}
+\section{Evaluation Metrics}
+
+\begin{frame}{Evaluation Metrics}
+\footnotesize
+\begin{block}{Model \& Attribute Extraction}
+\begin{itemize}
+	\item Classification Accuracy (garment category)
+	\item Precision, Recall, F1-score (category labels)
+	\item Color extraction error (ΔE / HEX match rate)
+\end{itemize}
+\end{block}
+
+\vspace{0.25cm}
+
+\begin{block}{Recommendation Quality}
+\begin{itemize}
+	\item Top-$k$ match rate (user-accepted outfits)
+	\item Coverage (\% of wardrobe items recommended)
+	\item Diversity score (color/style variety)
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Evaluation Metrics}
+\footnotesize
+\begin{block}{System \& UX}
+\begin{itemize}
+	\item API response time (ms) for upload/recommendation
+	\item Success rate for image upload and processing
+	\item User satisfaction (Likert survey rating)
+\end{itemize}
+\end{block}
+\end{frame}
+
+% Conclusion
+\section{Conclusion}
+\begin{frame}{\textbf{Conclusion}}
+\begin{itemize}
+	\item A virtual AI wardrobe companion for personalized outfit suggestions.
+	\item Reduced effort and time in shopping and outfit matching.
+	\item Weather-aware and occasion-specific styling.
+	\item Support for sustainable fashion by maximizing wardrobe usage.
+	\item Smarter and more interactive fashion recommendation experience.
+\end{itemize}
+\end{frame}
+
+% Force all references to appear
+\nocite{Sarkar_2023_WACV}
+\nocite{kalashi2025hybrid}
+\nocite{sulthana2021review}
+\nocite{pandit2020review_clothes_matching}
+\nocite{b_r2025ai_virtual_clothing}
+\nocite{fathima2024fashion_fusion}
+\nocite{patel2024smart_fashion_rf}
+\nocite{kumar2025virtual_wardrobe_ar}
+
+\section{References}
+\begin{frame}[allowframebreaks]{\textbf{References}}
+    \footnotesize
+    \bibliographystyle{IEEEtran}
+    \bibliography{mybib}
+\end{frame}
+
+\end{document}

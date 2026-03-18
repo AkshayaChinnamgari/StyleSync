@@ -1,0 +1,29 @@
+{
+  "samples": 50,
+  "classification": {
+    "accuracy": 0.2,
+    "macro_precision": 0.0222,
+    "macro_recall": 0.1111,
+    "macro_f1": 0.037,
+    "weighted_precision": 0.04,
+    "weighted_recall": 0.2,
+    "weighted_f1": 0.0667,
+    "labels": [
+      "bag",
+      "boots",
+      "cardigan",
+      "dress",
+      "pants",
+      "sandals",
+      "shirt",
+      "shoes",
+      "trench_coat"
+    ]
+  },
+  "color": {
+    "hex_match_rate": 0.0,
+    "mean_rgb_distance": 0.0,
+    "mean_delta_e": 0.0,
+    "color_samples": 0
+  }
+}

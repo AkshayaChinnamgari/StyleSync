@@ -1,0 +1,22 @@
+flowchart LR
+  User((User)) --> UI[React SPA (Browser)]
+  UI -->|Axios + JWT| API[FastAPI Backend]
+
+  API --> Auth[Auth + JWT]
+  API --> Wardrobe[Wardrobe: upload, detect, list, search, filter, categories]
+  API --> Reco[Recommendations: occasion, pair-with, today]
+  API --> ColorHarmony[Color Harmony]
+  API --> WeatherSvc[Weather Service]
+  API --> WeatherClothing[Weather Clothing]
+  API --> ImageServe[Static Image Serving]
+
+  Auth --> DB[(SQLite via SQLAlchemy)]
+  Wardrobe --> DB
+  Reco --> DB
+  ColorHarmony --> DB
+
+  Wardrobe --> FS[(Local File Storage: uploads + profile images)]
+  Wardrobe --> ML[Image Analysis: rembg + PIL + MobileNetV2]
+  WeatherSvc --> OWM[OpenWeatherMap API]
+  WeatherClothing --> OWM
+  ImageServe --> FS
