@@ -21,9 +21,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-### Manual Setup
 
-See [SETUP_FOR_TEAMMATES.md](SETUP_FOR_TEAMMATES.md) for detailed instructions.
 
 ---
 
@@ -380,5 +378,3 @@ For issues and questions:
 - [MobileNetV2 Paper](https://arxiv.org/abs/1801.04381)
 
 ---
-
-**Made with ❤️ for fashion enthusiasts and developers**
